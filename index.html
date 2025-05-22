@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kancil Transport</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">Kancil <span style="color: #ffcc00">Transport</span>.</a>
+      <div class="navbar-nav">
+        <a href="#">Beranda</a>
+        <a href="#tentang">Tentang Kami</a>
+        <a href="#menu">Pemesanan</a>
+        <a href="#kontak">Kontak</a>
+      </div>
+      <div class="navbar-extra">
+        <a href="#" id="search"><i data-feather="search"></i></a>
+        <a href="#" id="Shopping-Cart"><i data-feather="shopping-cart"></i></a>
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+    </nav>
+
+    <section style="background: url('img/mobil.png') center/cover no-repeat; padding: 10rem 2rem; text-align: center;">
+      <h1>Selamat Datang di <strong>Kancil Transport</strong></h1>
+      <p>Solusi transportasi dalam dan luar kota yang aman, nyaman, dan terpercaya.</p>
+      <img src="img/driver.jpg" alt="Driver" style="max-width: 130px; border-radius: 40%; margin-top: 2rem;" />
+       <div>
+          <a href="#menu" class="cta-button cta-yellow">Pesan Sekarang</a>
+          <a href="https://wa.me/628979524004" target="_blank" class="cta-button cta-green">Chat WhatsApp</a>
+        </div>
+    </section>
+
+    <section id="tentang">
+      <h2>Tentang Kami</h2>
+      <p>Kancil Transport merupakan layanan transportasi terpercaya yang siap melayani perjalanan dalam dan luar kota dengan armada yang bersih dan pengemudi profesional. Kami hadir untuk memberikan kenyamanan dan keamanan perjalanan Anda.</p>
+    </section>
+
+    <!-- Pemesanan -->
+    <section id="menu">
+      <h2>Pemesanan</h2>
+      <p>Silakan pilih jenis layanan transportasi kami:</p>
+      <div class="menu-grid">
+        <div class="menu-item">🚕 Transportasi dalam kota</div>
+        <div class="menu-item">🚌 Perjalanan antar kota</div>
+        <div class="menu-item">📅 Charter harian atau bulanan</div>
+        <div class="menu-item">🎁 Pengantaran ke pusat oleh-oleh</div>
+      </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak">
+      <h2>Kontak Kami</h2>
+      <p>Silakan isi form berikut untuk langsung terhubung via WhatsApp [0897-9524-004]:</p>
+      <form action="" onsubmit="return redirectToWhatsapp()">
+        <input type="text" id="nama" placeholder="Nama Anda" required />
+        <input type="text" id="tujuan" placeholder="Tujuan / Kota" required />
+        <textarea id="pesan" rows="4" placeholder="Pesan atau kebutuhan Anda" required></textarea>
+        <button type="submit" class="cta-button cta-green">Kirim via WhatsApp</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Kancil Transport. All rights reserved.</p>
+    </footer>
+    <script>
+      feather.replace();
+      function redirectToWhatsapp() {
+        const nama = document.getElementById("nama").value;
+        const tujuan = document.getElementById("tujuan").value;
+        const pesan = document.getElementById("pesan").value;
+        const waUrl = `https://wa.me/628979524004?text=Halo%20Kancil%20Transport%2C%0ASaya%20${nama}%20ingin%20melakukan%20pemesanan%20ke%20${tujuan}.%0A${pesan}`;
+        window.open(waUrl, '_blank');
+        return false;
+      }
+    </script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
